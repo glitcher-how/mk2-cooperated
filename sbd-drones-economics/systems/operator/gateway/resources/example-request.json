@@ -1,0 +1,6 @@
+{
+  "action": "request_available_drones",
+  "payload": {
+    "budget": 1000
+  }
+}

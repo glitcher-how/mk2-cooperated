@@ -1,0 +1,24 @@
+[tool.pytest.ini_options]
+pythonpath = [
+  ".",
+  "components/sdk-core/src",
+  "systems/operator/operator_component/src",
+  "systems/operator/gateway/src",
+  "systems/operator/src",
+]
+addopts = "-ra"
+testpaths = [
+  "tests",
+  "systems/operator/operator_component/tests",
+  "systems/operator/gateway/tests",
+  "systems/operator/tests",
+  "components/sdk-core/tests",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "D"]
+ignore = ["D203", "D212"]

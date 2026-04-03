@@ -1,0 +1,11 @@
+@startuml
+title Маршрутизация запроса в gateway
+actor Client
+participant Gateway
+participant OperatorComponent
+Client -> Gateway: action + payload
+Gateway -> Gateway: resolve ACTION_ROUTING[action]
+Gateway -> OperatorComponent: request(topic, message)
+OperatorComponent --> Gateway: result
+Gateway --> Client: result
+@enduml

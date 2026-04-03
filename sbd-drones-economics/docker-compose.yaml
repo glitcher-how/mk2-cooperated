@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  operator_system:
+    build:
+      context: .
+      dockerfile: systems/operator/dockerfile
+    environment:
+      PYTHONUNBUFFERED: "1"
+    command: ["python", "-m", "operator_system"]
+
+  operator_gateway:
+    profiles: ["split"]
+    build:
+      context: .
+      dockerfile: systems/operator/gateway/dockerfile
+    environment:
+      PYTHONUNBUFFERED: "1"
+    command: ["python", "-m", "operator_gateway"]
+
+  operator_component:
+    profiles: ["split"]
+    build:
+      context: .
+      dockerfile: systems/operator/operator_component/dockerfile
+    environment:
+      PYTHONUNBUFFERED: "1"
+    command: ["python", "-m", "operator_component"]

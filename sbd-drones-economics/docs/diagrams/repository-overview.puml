@@ -1,0 +1,18 @@
+@startuml
+title Обзор взаимодействия модулей репозитория
+
+actor User
+participant "operator_gateway" as Gateway
+participant "operator_component" as Component
+participant "InMemory SystemBus" as Bus
+participant "External systems" as External
+
+User -> Gateway: request(action, payload)
+Gateway -> Bus: request(components.operator, message)
+Bus -> Component: dispatch(message)
+Component -> External: optional requests
+External --> Component: responses
+Component --> Bus: result
+Bus --> Gateway: result
+Gateway --> User: response
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+title Регистрация дрона в operator_component
+actor Gateway
+participant OperatorComponent
+Gateway -> OperatorComponent: register_drone(drone_id, model, capabilities)
+OperatorComponent -> OperatorComponent: validate payload
+OperatorComponent -> OperatorComponent: persist in memory
+OperatorComponent --> Gateway: status=registered
+@enduml

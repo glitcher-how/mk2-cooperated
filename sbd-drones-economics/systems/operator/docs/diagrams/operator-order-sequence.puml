@@ -1,0 +1,17 @@
+@startuml
+title Регистрация дрона и последующий запрос доступных БВС
+
+actor Client
+participant Gateway
+participant OperatorComponent
+
+Client -> Gateway: register_drone
+Gateway -> OperatorComponent: register_drone
+OperatorComponent --> Gateway: status=registered
+Gateway --> Client: status=registered
+
+Client -> Gateway: request_available_drones
+Gateway -> OperatorComponent: request_available_drones
+OperatorComponent --> Gateway: drones[]
+Gateway --> Client: drones[]
+@enduml

@@ -1,0 +1,11 @@
+{
+  "action": "register_drone",
+  "payload": {
+    "drone_id": "drone-001",
+    "model": "AgroDrone-X",
+    "capabilities": {
+      "payload_kg": 12,
+      "flight_time_min": 45
+    }
+  }
+}

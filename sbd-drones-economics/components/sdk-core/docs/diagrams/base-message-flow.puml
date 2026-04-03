@@ -1,0 +1,10 @@
+@startuml
+title Базовый message flow
+participant Gateway
+participant SystemBus
+participant Component
+Gateway -> SystemBus: request(topic, message)
+SystemBus -> Component: handler(message)
+Component --> SystemBus: result
+SystemBus --> Gateway: result
+@enduml

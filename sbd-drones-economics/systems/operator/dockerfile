@@ -1,0 +1,5 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY . .
+ENV PYTHONPATH=/app:/app/components/sdk-core/src:/app/systems/operator/operator_component/src:/app/systems/operator/gateway/src:/app/systems/operator/src
+CMD ["python", "-m", "operator_system"]
