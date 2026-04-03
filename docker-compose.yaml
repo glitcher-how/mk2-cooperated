@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  operator:
+    build: ./systems/operator
+    container_name: operator
+    ports:
+      - "8000:8000"
