@@ -95,4 +95,4 @@ Each team implemented their own system independently, communicating only through
 
 ## Author
 
-Alexander Kovalev
+Aleksander Kovalev
