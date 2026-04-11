@@ -2,8 +2,8 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-COPY config/Pipfile /app/config/Pipfile
-COPY config/Pipfile.lock /app/config/Pipfile.lock
+COPY config/requirements.txt /app/config/requirements.txt
+RUN pip install -r /app/config/requirements.txt --no-cache-dir
 
 COPY . /app
 

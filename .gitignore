@@ -12,5 +12,6 @@ env/
 Thumbs.db
 *.log
 .pytest_cache/
+systems/operator/.generated/
 .coverage
 htmlcov/
